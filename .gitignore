@@ -1,0 +1,41 @@
+# Local-only notes (not tracked)
+TOKEN_OPTIMIZATION_RULES.md
+SHEET_SETUP_GUIDE.md
+
+# AI / agent tooling (not tracked)
+.claude/
+.agents/
+CLAUDE.md
+AGENTS.md
+skills-lock.json
+
+# Playwright test screenshots
+.playwright-cli/
+
+# Third-party reference material (Claude.com design system copy)
+frontend/docs/
+
+# Secrets (frontend/.gitignore also covers these)
+.env
+.env*.local
+
+# Dependencies / build output, in case something runs from the root
+node_modules/
+.next/
+out/
+
+# Test output
+test-results/
+playwright-report/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,172 @@
+{
+  "sou-lockup-48": {
+    "w": 232,
+    "h": 48,
+    "set": [
+      {
+        "d": 1,
+        "src": "/brand/px/sou-lockup-48@1x.png?v=46daf1d4"
+      },
+      {
+        "d": 1.25,
+        "src": "/brand/px/sou-lockup-48@1.25x.png?v=9d939673"
+      },
+      {
+        "d": 1.5,
+        "src": "/brand/px/sou-lockup-48@1.5x.png?v=c9b48bef"
+      },
+      {
+        "d": 1.75,
+        "src": "/brand/px/sou-lockup-48@1.75x.png?v=83928d4b"
+      },
+      {
+        "d": 2,
+        "src": "/brand/px/sou-lockup-48@2x.png?v=ddf4793f"
+      },
+      {
+        "d": 2.5,
+        "src": "/brand/px/sou-lockup-48@2.5x.png?v=f41b9ec8"
+      },
+      {
+        "d": 3,
+        "src": "/brand/px/sou-lockup-48@3x.png?v=aaeae50b"
+      }
+    ],
+    "full": "/brand/sou-lockup.png?v=95690198"
+  },
+  "sou-lockup-56": {
+    "w": 268,
+    "h": 56,
+    "set": [
+      {
+        "d": 1,
+        "src": "/brand/px/sou-lockup-56@1x.png?v=62278646"
+      },
+      {
+        "d": 1.25,
+        "src": "/brand/px/sou-lockup-56@1.25x.png?v=a7931461"
+      },
+      {
+        "d": 1.5,
+        "src": "/brand/px/sou-lockup-56@1.5x.png?v=9817de74"
+      },
+      {
+        "d": 1.75,
+        "src": "/brand/px/sou-lockup-56@1.75x.png?v=06fca163"
+      },
+      {
+        "d": 2,
+        "src": "/brand/px/sou-lockup-56@2x.png?v=2eb74ba7"
+      },
+      {
+        "d": 2.5,
+        "src": "/brand/px/sou-lockup-56@2.5x.png?v=9aa0b16e"
+      },
+      {
+        "d": 3,
+        "src": "/brand/px/sou-lockup-56@3x.png?v=0714bc56"
+      }
+    ],
+    "full": "/brand/sou-lockup.png?v=95690198"
+  },
+  "sou-seal-36": {
+    "w": 48,
+    "h": 36,
+    "set": [
+      {
+        "d": 1,
+        "src": "/brand/px/sou-seal-36@1x.png?v=f048c344"
+      },
+      {
+        "d": 1.25,
+        "src": "/brand/px/sou-seal-36@1.25x.png?v=2448a066"
+      },
+      {
+        "d": 1.5,
+        "src": "/brand/px/sou-seal-36@1.5x.png?v=cd6c6ab1"
+      },
+      {
+        "d": 1.75,
+        "src": "/brand/px/sou-seal-36@1.75x.png?v=435c7fc4"
+      },
+      {
+        "d": 2,
+        "src": "/brand/px/sou-seal-36@2x.png?v=bf384d37"
+      },
+      {
+        "d": 2.5,
+        "src": "/brand/px/sou-seal-36@2.5x.png?v=5193f890"
+      },
+      {
+        "d": 3,
+        "src": "/brand/px/sou-seal-36@3x.png?v=19ebf2ec"
+      }
+    ],
+    "full": "/brand/sou-seal.png?v=e88738be"
+  },
+  "naac-a-36": {
+    "w": 44,
+    "h": 36,
+    "set": [
+      {
+        "d": 1,
+        "src": "/brand/px/naac-a-36@1x.png?v=88d96ff3"
+      },
+      {
+        "d": 1.25,
+        "src": "/brand/px/naac-a-36@1.25x.png?v=24f34b26"
+      },
+      {
+        "d": 1.5,
+        "src": "/brand/px/naac-a-36@1.5x.png?v=62e15d29"
+      },
+      {
+        "d": 1.75,
+        "src": "/brand/px/naac-a-36@1.75x.png?v=c41b67c3"
+      },
+      {
+        "d": 2,
+        "src": "/brand/px/naac-a-36@2x.png?v=6bbdd934"
+      },
+      {
+        "d": 2.5,
+        "src": "/brand/px/naac-a-36@2.5x.png?v=2520047f"
+      },
+      {
+        "d": 3,
+        "src": "/brand/px/naac-a-36@3x.png?v=c83c637e"
+      }
+    ],
+    "full": "/brand/naac-a.png?v=24bb639c"
+  },
+  "sou-lockup-footer": {
+    "w": 1834,
+    "h": 385,
+    "set": [
+      {
+        "w": 320,
+        "src": "/brand/px/sou-lockup-w320.png?v=9aca9553"
+      },
+      {
+        "w": 420,
+        "src": "/brand/px/sou-lockup-w420.png?v=c9b7f0a1"
+      },
+      {
+        "w": 640,
+        "src": "/brand/px/sou-lockup-w640.png?v=994f064b"
+      },
+      {
+        "w": 840,
+        "src": "/brand/px/sou-lockup-w840.png?v=448410d7"
+      },
+      {
+        "w": 1260,
+        "src": "/brand/px/sou-lockup-w1260.png?v=45f90fc9"
+      },
+      {
+        "w": 1834,
+        "src": "/brand/px/sou-lockup-w1834.png?v=95690198"
+      }
+    ]
+  }
+}

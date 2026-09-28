@@ -1,0 +1,54 @@
+[
+  {
+    "id": "git-github-101",
+    "date": "2026-08-08",
+    "title": "Git & GitHub: your first real commit",
+    "speaker": "CodeXLab Core Team",
+    "tags": "Git, Open source",
+    "summary": "SAMPLE DATA — replace via the Google Sheet. Branches, commits, pull requests and fixing a merge conflict live, ending with everyone opening their first PR.",
+    "attendees": "",
+    "resources_url": "",
+    "status": "published",
+    "photos": "",
+    "cover_image_url": ""
+  },
+  {
+    "id": "web-from-zero",
+    "date": "2026-08-22",
+    "title": "Web from zero: HTML, CSS and one deploy",
+    "speaker": "CodeXLab Core Team",
+    "tags": "Web",
+    "summary": "SAMPLE DATA — replace via the Google Sheet. A single-page portfolio built from an empty folder and deployed before the session ended.",
+    "attendees": "",
+    "resources_url": "",
+    "status": "published",
+    "photos": "",
+    "cover_image_url": ""
+  },
+  {
+    "id": "dsa-patterns-arrays",
+    "date": "2026-09-05",
+    "title": "DSA patterns: two pointers & sliding window",
+    "speaker": "CodeXLab Core Team",
+    "tags": "DSA / CP",
+    "summary": "SAMPLE DATA — replace via the Google Sheet. Recognising the pattern before writing code, with five problems solved together on the board.",
+    "attendees": "",
+    "resources_url": "",
+    "status": "published",
+    "photos": "",
+    "cover_image_url": ""
+  },
+  {
+    "id": "ai-apps-weekend",
+    "date": "2026-09-19",
+    "title": "Build a small AI app in 90 minutes",
+    "speaker": "CodeXLab Core Team",
+    "tags": "AI / ML, Web",
+    "summary": "SAMPLE DATA — replace via the Google Sheet. Calling an LLM API from a tiny web app, prompt basics and shipping a demo.",
+    "attendees": "",
+    "resources_url": "",
+    "status": "published",
+    "photos": "",
+    "cover_image_url": ""
+  }
+]

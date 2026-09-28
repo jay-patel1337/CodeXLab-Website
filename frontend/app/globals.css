@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* CodeXLab tokens — source of truth is DESIGN.md. Never inline hex in components. */
+@theme {
+  --color-ember: #c9521f;
+  --color-ember-active: #a8421a;
+  --color-ember-text: #b4451a;
+  --color-ink: #262523;
+  --color-body: #3d3b38;
+  --color-muted: #6e6a63;
+  --color-muted-soft: #8f8a80;
+  --color-canvas: #f8f4ee;
+  --color-surface-card: #efe8dd;
+  --color-surface-strong: #e6ddcf;
+  --color-hairline: #e4dcd0;
+  --color-dark: #1a1917;
+  --color-dark-elevated: #262420;
+  --color-dark-soft: #211f1c;
+  --color-dark-hairline: #34312c;
+  --color-on-dark: #f8f4ee;
+  --color-on-dark-soft: #a39f97;
+  --color-terminal: #5db8a6;
+  --color-error: #c64545;
+
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1); /* slow, calm arrivals */
+
+  --animate-caret: caret 1.05s steps(1) infinite;
+  --animate-brace: brace 2.4s ease-in-out infinite;
+
+  @keyframes caret {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+  }
+  @keyframes brace {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+}
+
+@layer base {
+  html {
+    background: var(--color-canvas);
+    color: var(--color-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-canvas);
+    font-family: var(--font-sans);
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-canvas);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* ---- Intro overlay (no-JS + already-seen safety) ---- */
+.skip-intro .intro-overlay { display: none; }
+.intro-overlay { animation: intro-fallback 0.35s 4.6s forwards; }
+@keyframes intro-fallback { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+.js .hero-x-placeholder { opacity: 0; }
+.skip-intro .hero-x-placeholder { opacity: 1; }
+
+/* Faint mono code grid behind the hero word */
+/* Faint grid fading out toward the edges. The fade is a canvas-coloured radial gradient painted over the
+   lines, not a mask-image: a mask costs an extra off-screen pass over the whole element, which at phone
+   pixel density (3x) over the 3500px-tall Goals section made scrolling stutter. Use on canvas backgrounds. */
+.code-grid {
+  background-image:
+    radial-gradient(ellipse at center, transparent 30%, var(--color-canvas) 75%),
+    linear-gradient(to right, color-mix(in oklab, var(--color-ink) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-ink) 6%, transparent) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Hero height on phones: the large viewport height (toolbar hidden), with the toolbar's height kept clear
+   at the bottom. Nothing resizes or re-centres when the browser toolbar slides away mid-scroll (100dvh did,
+   and the word jumped). On desktop all three units are equal, so the padding is 0. */
+.hero-h {
+  height: 100vh;
+  height: 100lvh;
+  padding-bottom: calc(100lvh - 100svh);
+}
+
+/* Touch: no grey flash on tap; buttons and rows show their own :active states instead. */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+.blade-pulse { animation: blade-pulse 0.9s ease-in-out infinite; }
+@keyframes blade-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+/* Scroll reveal: content is visible by default; only hidden once JS is confirmed.
+   Slow and short-travel on purpose: things arrive calmly instead of popping. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 1.2s var(--ease-soft) calc(var(--i, 0) * 120ms),
+    transform 1.4s var(--ease-soft) calc(var(--i, 0) * 120ms);
+}
+.js .reveal.in { opacity: 1; transform: none; }
+
+/* Staggered pieces inside a revealed parent (.in): set --d for the delay. */
+.js .rise {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 1.2s var(--ease-soft) var(--d, 0ms),
+    transform 1.4s var(--ease-soft) var(--d, 0ms);
+}
+.js .in .rise, .js .rise.in { opacity: 1; transform: none; }
+
+/* Page entrance (/join, /feedback): header, then each form block, drift in one by one. */
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px); } }
+/* Hero wordmark: letters unfold out of the X (Hero.tsx → Letters). `translate`, not `transform`:
+   GSAP's scroll split owns the parent halves' transforms. */
+@keyframes hero-unfold { from { opacity: 0; translate: var(--from) 0; } }
+.hero-unfold { animation: hero-unfold 1.7s var(--ease-soft) var(--delay, 0s) both; }
+/* While the data-structure loop runs (useWordLoop), the letters ignore hover (no 0x labels mid-pop). */
+.cx-loop { pointer-events: none; }
+.page-enter > *, .page-enter form > * { animation: rise-in 1.3s var(--ease-soft) 0.45s both; }
+.page-enter > :nth-child(2) { animation: none; }
+.page-enter form > :nth-child(2) { animation-delay: 0.6s; }
+.page-enter form > :nth-child(3) { animation-delay: 0.72s; }
+.page-enter form > :nth-child(4) { animation-delay: 0.84s; }
+.page-enter form > :nth-child(5) { animation-delay: 0.96s; }
+.page-enter form > :nth-child(6) { animation-delay: 1.08s; }
+.page-enter form > :nth-child(n + 7) { animation-delay: 1.2s; }
+.js .js-hide-l { opacity: 0; transform: translateX(-0.4em); }
+.js .js-hide-r { opacity: 0; transform: translateX(0.4em); }
+
